@@ -36,11 +36,6 @@ class TasksController < ApplicationController
     redirect_to list_path(@task.list)
   end
 
-  def show
-  @incomplete_tasks = Task.incomplete
-  @complete_tasks = Task.complete
-end
-
 private
   def task_params
     params.require(:task).permit(:description, :done)
